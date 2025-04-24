@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureeX - Технологии будущего</title>
+    <style>
+        /* Основные стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: #000;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Технологичный фон с анимацией */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 100, 255, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 200, 0.15) 0%, transparent 20%),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1));
+            z-index: -1;
+        }
+        
+        /* Анимация частиц */
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-20px) translateX(10px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+        
+        .particle {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+        
+        /* Контент */
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 20px;
+            text-align: center;
+            z-index: 1;
+        }
+        
+        .logo-container {
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+            /* Замените на ваш логотип */
+            background-image: url('logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00d2ff, #3a7bd5, #00d2ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: shine 3s linear infinite;
+        }
+        
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+        
+        /* Кнопка скачивания */
+        .download-btn {
+            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 20px rgba(58, 123, 213, 0.3);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3), 0 0 30px rgba(58, 123, 213, 0.4);
+        }
+        
+        .download-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .download-btn::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover::after {
+            left: 100%;
+        }
+        
+        /* Футер */
+        footer {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .android-only {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(58, 123, 213, 0.5);
+            box-shadow: 0 0 15px rgba(58, 123, 213, 0.3);
+            color: #3a7bd5;
+            font-weight: 600;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Частицы для фона -->
+    <div class="particle" style="width: 2px; height: 2px; top: 20%; left: 15%;"></div>
+    <div class="particle" style="width: 3px; height: 3px; top: 60%; left: 25%; animation-delay: 1s;"></div>
+    <div class="particle" style="width: 1px; height: 1px; top: 30%; left: 75%; animation-delay: 2s;"></div>
+    <div class="particle" style="width: 2px; height: 2px; top: 70%; left: 65%; animation-delay: 3s;"></div>
+    <div class="particle" style="width: 3px; height: 3px; top: 45%; left: 50%; animation-delay: 4s;"></div>
+    
+    <!-- Основной контент -->
+    <div class="content">
+        <div class="logo-container">
+            <div class="logo"></div>
+            <h1>PureeX</h1>
+            <p class="tagline">Еда без правил и ограничений.</p>
+        </div>
+        
+        <button class="download-btn" onclick="downloadApp()">Скачать</button>
+    </div>
+    
+    <!-- Футер -->
+    <footer>
+        <span class="android-only">Доступно только для Android</span>
+    </footer>
+    
+    <script>
+        // Функция для скачивания APK
+        function downloadApp() {
+            // Создаем временную ссылку для скачивания
+            const link = document.createElement('a');
+            link.href = 'Food_Configurator (7).apk'; // Укажите правильный путь к APK файлу
+            link.download = 'PureeX.apk';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Можно добавить аналитику или подтверждение
+            console.log('Начато скачивание PureeX.apk');
+        }
+        
+        // Добавляем больше частиц при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.body;
+            for (let i = 0; i < 10; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                const size = Math.random() * 3 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                particle.style.animationDuration = `${Math.random() * 5 + 3}s`;
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
+</body>
+</html>
